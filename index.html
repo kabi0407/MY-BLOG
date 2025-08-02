@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Post Cards</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Electric Cars</h1>
+        </div>
+    </header>
+    
+    <main>
+        <div class="container">
+            <h2>Latest Articles</h2>
+            
+            <div class="blog-grid">
+                <article class="blog-card" data-id="1">
+                    <div class="card-image">
+                        <img src="https://imgd.aeplcdn.com/664x374/n/cw/ec/93821/model-s-exterior-front-view.jpeg?q=80"ait="sample image" viewBox="0 0 800 600" width="100%" height="100%">
+                            <rect width="800" height="600" fill="#4f46e5" />
+                            <circle cx="400" cy="300" r="150" fill="#818cf8" />
+                            <rect x="250" y="350" width="300" height="20" fill="#c7d2fe" />
+                            <rect x="300" y="380" width="200" height="20" fill="#c7d2fe" />
+                            <rect x="330" y="410" width="140" height="20" fill="#c7d2fe" />
+                        </svg>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-date">July 27, 2025</div>
+                        <h3 class="card-title"> Tesla Model S</h3>
+                        <p class="card-description">The Tesla Model S is not just a car — it's a revolution on wheels. Since its debut, the Model S has redefined what electric vehicles (EVs) can be, combining luxury, speed, and cutting-edge technology. With every upgrade, Tesla pushes boundaries and brings the future of driving closer to the present.</p>
+                        <button class="read-more">Read More</button>
+                    </div>
+                </article>
+                
+                <article class="blog-card" data-id="2">
+                    <div class="card-image">
+                        <img src="https://elctrik.com/wp-content/uploads/2024/09/nexxon-ev-798x466.webp"ait="sample image" viewBox="0 0 800 600" width="100%" height="100%">
+                            <rect width="800" height="600" fill="#0891b2" />
+                            <polygon points="400,150 600,400 200,400" fill="#22d3ee" />
+                            <rect x="250" y="420" width="300" height="20" fill="#a5f3fc" />
+                            <rect x="300" y="450" width="200" height="20" fill="#a5f3fc" />
+                            <rect x="330" y="480" width="140" height="20" fill="#a5f3fc" />
+                        </svg>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-date">July 28, 2025</div>
+                        <h3 class="card-title">Tata Nexon EV</h3>
+                        <p class="card-description">In a country transitioning toward sustainable mobility, Tata Nexon EV has emerged as a pioneer of India’s electric car movement. With its bold styling, practical range, and affordable pricing, the Nexon EV is not just an electric vehicle — it's a lifestyle choice for eco-conscious Indians.</p>
+                        <button class="read-more">Read More</button>
+                    </div>
+                </article>
+                
+                <article class="blog-card" data-id="3">
+                    <div class="card-image">
+                        <img src="https://static.promediateknologi.id/crop/0x0:0x0/0x0/webp/photo/p2/225/2024/05/27/IMG_3559-3603440636.jpeg"ait="sample image" viewBox="0 0 800 600" width="100%" height="100%">
+                            <rect width="800" height="600" fill="#c026d3" />
+                            <rect x="250" y="200" width="300" height="200" fill="#e879f9" />
+                            <rect x="250" y="420" width="300" height="20" fill="#f5d0fe" />
+                            <rect x="300" y="450" width="200" height="20" fill="#f5d0fe" />
+                            <rect x="330" y="480" width="140" height="20" fill="#f5d0fe" />
+                        </svg>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-date">July 29, 2025</div>
+                        <h3 class="card-title">Hyundai IONIQ 5</h3>
+                        <p class="card-description">The Hyundai IONIQ 5 isn’t just another electric car — it’s a bold design statement backed by futuristic technology. With its retro-futuristic looks, ultra-fast charging, and intelligent features, the IONIQ 5 is redefining how the world sees electric mobility.</p>
+                        <button class="read-more">Read More</button>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </main>
+    
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h2>Electric Cars</h2>
+                    <p>Insights and updates on the latest trends in electric cars and sustainable mobility.</p>
+                </div>
+                
+                <div class="copyright">
+                    &copy; 2025 Electric Cars. All rights reserved.
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Article Modal -->
+    <div class="article-modal" id="articleModal">
+        <div class="modal-content">
+            <button class="modal-close">&times;</button>
+            <div class="modal-header" id="modalHeader">
+                <!-- SVG will be inserted here -->
+            </div>
+            <div class="modal-body">
+                <div class="modal-date" id="modalDate"></div>
+                <h2 class="modal-title" id="modalTitle"></h2>
+                <div class="modal-text" id="modalText"></div>
+                <button class="back-button">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="19" y1="12" x2="5" y2="12"></line>
+                        <polyline points="12 19 5 12 12 5"></polyline>
+                    </svg>
+                    Back to Articles
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Blog article data
+        const blogArticles = [
+            {
+                id: 1,
+                title: "The Future of Web Development",
+                date: "May 15, 2023",
+                image: `<img src="https://imgd.aeplcdn.com/664x374/n/cw/ec/93821/model-s-exterior-front-view.jpeg?q=80"alt"Sample image" viewBox="0 0 800 600" width="100%" height="100%">
+                            <rect width="800" height="600" fill="#4f46e5" />
+                            <circle cx="400" cy="300" r="150" fill="#818cf8" />
+                            <rect x="250" y="350" width="300" height="20" fill="#c7d2fe" />
+                            <rect x="300" y="380" width="200" height="20" fill="#c7d2fe" />
+                            <rect x="330" y="410" width="140" height="20" fill="#c7d2fe" />
+                        </svg>`,
+                content: `
+                    <p>The Plaid version of the Model S can go from 0 to 100 km/h in under 2 seconds, making it one of the fastest production cars in the world. It's powered by a tri-motor all-wheel drive system that delivers mind-blowing acceleration and precision control.</p>
+                    
+                    <p>Travel without limits – the Model S offers a range of up to 405 miles (652 km) on a single charge. Whether you're commuting or road-t</p>
+                    
+                    <p>The cabin is sleek and modern, featuring a 17-inch cinematic touchscreen, yoke-style steering, and customizable ambient lighting. Tesla's software is always improving through over-the-air (OTA) updates.</p>
+                    
+                   
+                `
+            },
+            {
+                id: 2,
+                title: "Mastering CSS Grid Layout",
+                date: "May 10, 2023",
+                image: `<img src="https://elctrik.com/wp-content/uploads/2024/09/nexxon-ev-798x466.webp" viewBox="0 0 800 600" width="100%" height="100%">
+                            <rect width="800" height="600" fill="#0891b2" />
+                            <polygon points="400,150 600,400 200,400" fill="#22d3ee" />
+                            <rect x="250" y="420" width="300" height="20" fill="#a5f3fc" />
+                            <rect x="300" y="450" width="200" height="20" fill="#a5f3fc" />
+                            <rect x="330" y="480" width="140" height="20" fill="#a5f3fc" />
+                        </svg>`,
+                content: `
+                    <p>The Nexon EV is powered by Tata’s Ziptron technology that delivers peak power of 129 PS and 245 Nm torque, making it smooth and responsive on city roads and highways.</p>
+                    
+                    <p>With a range of 312–465 km (depending on the variant: Prime, Max, or Long Range), it comfortably meets daily commute needs and even weekend road trips.</p>
+                    
+                    <p>Fast Charging Ready Forget long waits — charge up to 80% in just 56 minutes using a DC fast charger. Home AC charging takes about 6.5–8 hours, ideal for overnight use.</p>
+                        >
+
+`                   
+            },
+            {
+                id: 3,
+                title: "JavaScript Performance Optimization",
+                date: "May 5, 2023",
+                image: `<img src="https://static.promediateknologi.id/crop/0x0:0x0/0x0/webp/photo/p2/225/2024/05/27/IMG_3559-3603440636.jpeg" alt"Sample image"viewBox="0 0 800 600" width="100%" height="100%">
+                            <rect width="800" height="600" fill="#c026d3" />
+                            <rect x="250" y="200" width="300" height="200" fill="#e879f9" />
+                            <rect x="250" y="420" width="300" height="20" fill="#f5d0fe" />
+                            <rect x="300" y="450" width="200" height="20" fill="#f5d0fe" />
+                            <rect x="330" y="480" width="140" height="20" fill="#f5d0fe" />
+                        </svg>`,
+                content: `
+                    <p>The Hyundai IONIQ 5 is a revolutionary electric vehicle that blends retro-inspired design with cutting-edge technology. With its bold pixelated LED lights, smooth lines, and eco-friendly interior, it stands out as one of the most futuristic cars on the road. Powered by a 72.6 kWh battery, the IONIQ 5 delivers a range of up to 631 km (ARAI-certified) and supports ultra-fast charging that can take the battery from 10% to 80% in just 18 minutes. Inside, the spacious cabin features a flat floor, a sliding center console, and dual 12.3-inch displays that create a digital, premium driving experience. With advanced safety features like ADAS, Vehicle-to-Load (V2L) functionality, and 800V architecture, the Hyundai IONIQ 5 is more than just an EV — it’s a smart, stylish leap into the future of mobility.</p>
+                `
+            }
+        ];
+
+        // Get DOM elements
+        const modal = document.getElementById('articleModal');
+        const modalHeader = document.getElementById('modalHeader');
+        const modalDate = document.getElementById('modalDate');
+        const modalTitle = document.getElementById('modalTitle');
+        const modalText = document.getElementById('modalText');
+        const closeButton = document.querySelector('.modal-close');
+        const backButton = document.querySelector('.back-button');
+        const blogCards = document.querySelectorAll('.blog-card');
+        const readMoreButtons = document.querySelectorAll('.read-more');
+
+        // Function to open modal with article content
+        function openArticle(articleId) {
+            const article = blogArticles.find(article => article.id === parseInt(articleId));
+            
+            if (article) {
+                modalHeader.innerHTML = article.image;
+                modalDate.textContent = article.date;
+                modalTitle.textContent = article.title;
+                modalText.innerHTML = article.content;
+                
+                modal.classList.add('active');
+                document.body.style.overflow = 'hidden'; // Prevent scrolling behind modal
+            }
+        }
+
+        // Function to close modal
+        function closeModal() {
+            modal.classList.remove('active');
+            document.body.style.overflow = ''; // Restore scrolling
+        }
+
+        // Add click event listeners to blog cards
+        blogCards.forEach(card => {
+            card.addEventListener('click', function(e) {
+                // If the click is on the read more button, let that handler take care of it
+                if (e.target.classList.contains('read-more')) {
+                    return;
+                }
+                
+                const articleId = this.getAttribute('data-id');
+                openArticle(articleId);
+            });
+        });
+
+        // Add click event listeners to read more buttons
+        readMoreButtons.forEach(button => {
+            button.addEventListener('click', function(e) {
+                e.stopPropagation(); // Prevent the card click event from firing
+                const articleId = this.closest('.blog-card').getAttribute('data-id');
+                openArticle(articleId);
+            });
+        });
+
+        // Close modal when clicking the close button
+        closeButton.addEventListener('click', closeModal);
+        
+        // Close modal when clicking the back button
+        backButton.addEventListener('click', closeModal);
+
+        // Close modal when clicking outside the content
+        modal.addEventListener('click', function(e) {
+            if (e.target === modal) {
+                closeModal();
+            }
+        });
+
+        // Close modal when pressing Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && modal.classList.contains('active')) {
+                closeModal();
+            }
+        });
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'966d1ff5d4139bf3',t:'MTc1Mzc5NzQ0MS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
